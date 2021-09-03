@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+// Colors
+$yellow: #ffc500;
+$blue: #082137;
+$link-blue: #0148c2;
+$black: #3a3a3a;
+$red: #a20705;
+
+// Spacing
+$xs: 0.5rem;
+$s: 1rem;
+$m: 1.5rem;
+$l: 2rem;
+
+// Media queries
+$mobile-width: 380px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+body {
+  font-size: 16px;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
