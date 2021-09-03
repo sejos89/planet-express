@@ -1,0 +1,45 @@
+@import "../../../styles.scss";
+
+.workers {
+  background-color: $blue;
+  padding: $m;
+  text-align: center;
+
+  > h2 {
+    color: white;
+    margin-bottom: $m;
+  }
+
+  &__container {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $s;
+    justify-content: center;
+  }
+
+  &__card {
+    background-color: $yellow;
+    border-radius: $s;
+    border: 2px solid $black;
+    max-width: calc(#{$mobile-width} / 1.5);
+    padding: $s;
+    text-align: center;
+
+    > h2,
+    > h4 {
+      margin-bottom: $xs;
+    }
+
+    > div {
+      max-height: 200px;
+      overflow: hidden;
+      width: 100%;
+
+      > img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}

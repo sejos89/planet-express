@@ -1,0 +1,14 @@
+<div class="workers">
+  <h2>Y los empleados de Planet Express son...</h2>
+
+  <div class="workers__container">
+    <div class="workers__card" *ngFor="let worker of workers | async">
+      <h3>{{ worker.Name }}</h3>
+      <h4>{{ worker.Species }}</h4>
+
+      <div>
+        <img src="{{ worker.PicUrl }}" alt="{{ worker.Name }}" />
+      </div>
+    </div>
+  </div>
+</div>

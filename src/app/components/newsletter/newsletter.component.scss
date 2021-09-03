@@ -1,0 +1,22 @@
+.sign-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-container {
+    max-width: 200px;
+    margin: 10px 0;
+}
+
+.email-container input {
+    width: 100%;
+}
+
+.sign-form button {
+    max-width: 150px;
+}
+
+.text-danger {
+    color: red;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,59 @@
+@import "../../../styles.scss";
+
+.content-text {
+  font-size: $s;
+
+  @include tablet {
+    font-size: $m;
+  }
+}
+
+.countdown {
+  align-items: center;
+  background-color: $yellow;
+  display: flex;
+  flex-direction: column;
+  gap: $m;
+  justify-content: center;
+  padding: $m;
+  padding-top: calc(#{$l} * 2);
+
+  @include tablet {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  > img {
+    border-radius: $xs;
+    height: auto;
+    max-width: calc(#{$mobile-width} / 2);
+    width: 100%;
+  }
+
+  &__content {
+    > h4 {
+      font-size: $m;
+      margin-bottom: $s;
+
+      @include tablet {
+        font-size: $l;
+      }
+    }
+
+    > p {
+      @extend .content-text;
+    }
+  }
+
+  &__timer {
+    align-self: flex-end;
+    display: block;
+
+    @extend .content-text;
+  }
+
+  &__time-left {
+    font-weight: bold;
+  }
+}

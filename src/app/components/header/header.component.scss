@@ -1,0 +1,13 @@
+@import "../../../styles.scss";
+
+.header {
+  background-color: $blue;
+  height: 80px;
+  padding-top: $xs;
+  text-align: center;
+
+  > img {
+    height: auto;
+    max-width: calc(#{$mobile-width} / 3);
+  }
+}
