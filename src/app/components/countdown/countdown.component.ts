@@ -7,7 +7,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./countdown.component.scss'],
 })
 export class CountdownComponent implements OnInit {
-  public dDay: Date = new Date('Sept 07 2021 00:00:00');
+  public dDay: Date = new Date('Sept 09 2021 00:00:00');
 
   public timeDifference: number;
   public secondsToDday: number;
