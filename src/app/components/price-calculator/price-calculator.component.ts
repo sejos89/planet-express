@@ -10,6 +10,8 @@ export class PriceCalculatorComponent implements OnInit {
   calculatorForm: FormGroup;
   submitted: boolean = false;
   wrong: boolean = false;
+  quantity: number;
+  weight: number;
   finalPrice: number;
   constructor(fb: FormBuilder) {
     this.calculatorForm = fb.group({
@@ -23,7 +25,9 @@ export class PriceCalculatorComponent implements OnInit {
     if (this.calculatorForm.valid) {
       const { quantity, weight } = this.calculatorForm.value;
       this.submitted = true;
-      this.finalPrice = quantity * weight;
+      this.quantity = quantity;
+      this.weight = weight;
+      this.finalPrice = quantity * weight * 0.5;
     } else this.wrong = true;
   }
 }

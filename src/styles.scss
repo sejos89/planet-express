@@ -7,6 +7,7 @@ $black: #3a3a3a;
 $red: #a20705;
 
 // Spacing
+$xxs: 0.25rem;
 $xs: 0.5rem;
 $s: 1rem;
 $m: 1.5rem;
@@ -37,4 +38,18 @@ body {
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+.text-danger {
+  color: $red;
+  font-size: 0.8rem;
+}
+
+button {
+  background-color: $link-blue;
+  border: 2px solid $blue;
+  padding: $xs $s;
+  color: white;
+  margin-bottom: $s;
+  cursor: pointer;
 }

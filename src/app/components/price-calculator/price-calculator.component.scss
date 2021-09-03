@@ -1,0 +1,36 @@
+@import "../../../styles.scss";
+
+.black-title {
+  color: $black;
+  padding: $s 0;
+  text-align: center;
+}
+
+.price-calculator {
+  background-color: $yellow;
+
+  > h2 {
+    @extend .black-title;
+  }
+
+  > h4 {
+    @extend .black-title;
+  }
+
+  &__form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: $s;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    gap: $xxs;
+
+    @include tablet {
+      flex-direction: row;
+      gap: $xs;
+    }
+  }
+}

@@ -1,25 +1,34 @@
-<div class="calculator-form" [formGroup]="calculatorForm">
-  <div class="form-container">
-    <label>Cantidad (ud)</label>
-    <input type="number" formControlName="quantity" />
-    <span
-      class="text-danger"
-      *ngIf="calculatorForm.controls['quantity'].hasError('required') && wrong"
-      >El campo es obligatorio</span
-    >
+<div class="price-calculator">
+  <h2>
+    ¿Quieres estimar cúanto costará tu envío? ¡Usa nuestra calculadora de
+    precios!
+  </h2>
+  <div class="price-calculator__form" [formGroup]="calculatorForm">
+    <div class="price-calculator__input">
+      <label>Cantidad (ud) </label>
+      <input type="number" formControlName="quantity" />
+      <span
+        class="text-danger"
+        *ngIf="
+          calculatorForm.controls['quantity'].hasError('required') && wrong
+        "
+        >El campo es obligatorio</span
+      >
+    </div>
+    <div class="price-calculator__input">
+      <label>Peso (kg/ud) </label>
+      <input type="number" formControlName="weight" />
+      <span
+        class="text-danger"
+        *ngIf="calculatorForm.controls['weight'].hasError('required') && wrong"
+        >El campo es obligatorio</span
+      >
+    </div>
+    <button (click)="onSubmit()">Calcular precio</button>
   </div>
-  <div class="form-container">
-    <label>Peso (kg)</label>
-    <input type="number" formControlName="weight" />
-    <span
-      class="text-danger"
-      *ngIf="calculatorForm.controls['weight'].hasError('required') && wrong"
-      >El campo es obligatorio</span
-    >
-  </div>
-  <button (click)="onSubmit()">Calcular precio</button>
-  <h3>
-    El precio para {{ calculatorForm.value.quantity }} unidades y un peso total
-    de {{ calculatorForm.value.weight }} kg es de {{ finalPrice }} €
-  </h3>
+  <h4 *ngIf="submitted">
+    El precio para
+    {{ quantity }} unidades y un peso total de {{ weight }} kg es de
+    {{ finalPrice }} €
+  </h4>
 </div>

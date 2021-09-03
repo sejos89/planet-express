@@ -1,22 +1,37 @@
-.sign-form {
+@import "../../../styles.scss";
+
+.white-title {
+  color: white;
+  padding: $s 0;
+  text-align: center;
+}
+
+.newsletter {
+  background-color: $blue;
+  > h2 {
+    @extend .white-title;
+  }
+
+  &__form {
+    align-items: center;
     display: flex;
     flex-direction: column;
-}
 
-.email-container {
-    max-width: 200px;
+    > h2 {
+      @extend .white-title;
+    }
+
+    > label {
+      color: white;
+    }
+  }
+
+  &__email {
     margin: 10px 0;
-}
+    max-width: 200px;
 
-.email-container input {
-    width: 100%;
-}
-
-.sign-form button {
-    max-width: 150px;
-}
-
-.text-danger {
-    color: red;
-    font-size: 0.8rem;
+    > input {
+      width: 100%;
+    }
+  }
 }

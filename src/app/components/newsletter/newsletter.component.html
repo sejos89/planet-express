@@ -1,8 +1,8 @@
-<div *ngIf="!submitted">
-  <h2>¡Suscríbete a la newsletter de Planet Express!</h2>
-  <div class="sign-form" [formGroup]="signupForm">
+<div class="newsletter">
+  <div class="newsletter__form" *ngIf="!submitted" [formGroup]="signupForm">
+    <h2>¡Suscríbete a la newsletter de Planet Express!</h2>
     <label>Email</label>
-    <div class="email-container">
+    <div class="newsletter__email">
       <input type="email" formControlName="email" />
       <span
         class="text-danger"
@@ -17,8 +17,7 @@
     </div>
     <button (click)="onSubmit()">Suscribirse</button>
   </div>
+  <h2 *ngIf="submitted">
+    ¡Te has suscrito con éxito al correo {{ signupForm.value.email }}!
+  </h2>
 </div>
-<h2 *ngIf="submitted">
-  ¡Te has suscrito con éxito al correo {{ signupForm.value.email }}!
-</h2>
-<div></div>
