@@ -7,7 +7,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./countdown.component.scss'],
 })
 export class CountdownComponent implements OnInit {
-  public dDay: Date = new Date('Sept 09 2021 10:45:30');
+  public dDay: Date = new Date();
 
   public timeDifference: number;
   public secondsToDday: number;
@@ -15,9 +15,12 @@ export class CountdownComponent implements OnInit {
   public hoursToDday: number;
   public daysToDday: number;
 
+  constructor() {
+    this.dDay.setDate(this.dDay.getDate() + 3);
+  }
+
   private getTimeDifference() {
     this.timeDifference = this.dDay.getTime() - new Date().getTime();
-    if (this.timeDifference < 0) this.dDay.setDate(this.dDay.getDate() + 3);
     this.allocateTimeUnits(this.timeDifference);
   }
 
